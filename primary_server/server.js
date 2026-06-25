@@ -6,11 +6,7 @@ import nodemailer from "nodemailer";
 const app = express();
 app.use(express.json());
 
-app.use(
-  cors({
-    origin: process.env.VERCEL_URL,
-  }),
-);
+app.use(cors());
 const transporter = nodemailer.createTransport({
   service: "gmail",
   auth: {
