@@ -1,7 +1,6 @@
 import "dotenv/config";
 import express, { json } from "express";
 import cors from "cors";
-import nodemailer from "nodemailer";
 import { Resend } from "resend";
 
 
