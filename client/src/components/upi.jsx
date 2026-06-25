@@ -28,7 +28,7 @@ const UPIPayment = ({onClose}) => {
   }
 
   return (
-    <div ref={ModalRef} onClick={(e)=>{closeModal(e)}} className="w-full min-h-screen bg-black/50 backdrop-blur-sm flex items-center justify-center fixed">
+    <div ref={ModalRef} onClick={(e)=>{closeModal(e)}} className="w-full min-h-screen bg-black/50 backdrop-blur-sm z-10 flex items-center justify-center fixed">
       <div className="max-w-md mx-auto p-6 bg-white rounded-xl shadow-lg border border-gray-100 text-center font-sans">
         <h2 className="text-2xl font-bold text-gray-800 mb-2">
           Buy Me a Coffee ☕

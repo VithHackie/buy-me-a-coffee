@@ -2,24 +2,23 @@ import "dotenv/config";
 import express, { json } from "express";
 import cors from "cors";
 import nodemailer from "nodemailer";
+import { Resend } from "resend";
+
 
 const app = express();
 app.use(express.json());
 
-app.use(cors());
-const transporter = nodemailer.createTransport({
-  service: "gmail",
-  auth: {
-    user: "krishvermadev@gmail.com",
-    pass: process.env.GMAIL_PASSWORD,
-  },
-});
+app.use(cors({
+  origin : process.env.VERCEL_URL
+}));
+
+const resend = new Resend(process.env.RESEND_API_KEY)
 
 app.post("/validate", async (req, res) => {
   const body = req.body;
   try {
-    await transporter.sendMail({
-      from: '"Buy Me A Coffee" krishvermadev@gmail.com',
+    await resend.emails.send({
+      from: 'Acme <onboarding@resend.dev>',
       to: body.email,
       subject: `Thank you for the coffee! ☕`,
       html: `<div style='font-family: Arial, sans-serif; color: #333; line-height: 1.6;'> \
