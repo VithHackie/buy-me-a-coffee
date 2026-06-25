@@ -17,7 +17,7 @@ app.post("/validate", async (req, res) => {
   const body = req.body;
   try {
     await resend.emails.send({
-      from: 'Acme <onboarding@resend.dev>',
+      from: 'KrishVerma <onboarding@resend.dev>',
       to: body.email,
       subject: `Thank you for the coffee! ☕`,
       html: `<div style='font-family: Arial, sans-serif; color: #333; line-height: 1.6;'> \
