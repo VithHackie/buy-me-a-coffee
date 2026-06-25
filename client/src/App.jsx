@@ -70,8 +70,9 @@ function App() {
   };
 
   const validate = async (email) => {
+    const url = import.meta.env.BACKEND_URL+"/validate" ?? "http://localhost:8080/validate"
     try {
-      const response = await fetch("http://localhost:8080/validate", {
+      const response = await fetch(url, {
         method: "POST",
         mode: "cors",
         headers: { "Content-Type": "application/json" },
