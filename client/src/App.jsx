@@ -36,7 +36,7 @@ function App() {
 
       if (validate(email)) {
         setBG(" bg-emerald-600");
-        setMsg("Thank You for the donation. Check Your Email");
+        setMsg("Thank You for the donation. I'll Contact You ASAP");
         setVisible(true);
       }
     } catch (e) {
